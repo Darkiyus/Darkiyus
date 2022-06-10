@@ -20,7 +20,7 @@ Oh, and I'm really bad at English
 
 <img src="/Nightmare_Banner.gif" alt="Nightmare-Banner">
 
-A VRChat All-In-One Client (Mod)
+A VRChat All-In-One Client (Mod) [Project discontinued, as there is no longer any benefit!]
    
 <img src="/Project-ZZZombie.gif" alt="ZZZombie Banner">
 
