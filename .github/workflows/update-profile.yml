@@ -1,0 +1,83 @@
+name: Update profile data
+
+on:
+  schedule:
+    - cron: "15 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Update age
+        env:
+          BIRTH_DATE: ${{ secrets.BIRTH_DATE }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          from datetime import date
+          from pathlib import Path
+
+          birth_date_value = os.environ.get("BIRTH_DATE", "").strip()
+
+          if not birth_date_value:
+              raise SystemExit("BIRTH_DATE secret is missing.")
+
+          birth_date = date.fromisoformat(birth_date_value)
+          today = date.today()
+
+          age = today.year - birth_date.year - (
+              (today.month, today.day)
+              < (birth_date.month, birth_date.day)
+          )
+
+          readme_path = Path("README.md")
+          readme = readme_path.read_text(encoding="utf-8")
+
+          replacement = (
+              "<!-- AGE:START -->\n"
+              f"![Age](https://img.shields.io/badge/Age-{age}-C20E1A"
+              "?style=for-the-badge&logo=calendar&logoColor=white)\n"
+              "<!-- AGE:END -->"
+          )
+
+          updated, count = re.subn(
+              r"<!-- AGE:START -->.*?<!-- AGE:END -->",
+              replacement,
+              readme,
+              count=1,
+              flags=re.DOTALL,
+          )
+
+          if count != 1:
+              raise SystemExit("Age markers were not found in README.md.")
+
+          readme_path.write_text(updated, encoding="utf-8")
+          print(f"Age updated to {age}.")
+          PY
+
+      - name: Commit updated README
+        run: |
+          if git diff --quiet; then
+            echo "No changes required."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: update profile age"
+          git push
