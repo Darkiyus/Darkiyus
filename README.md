@@ -133,8 +133,8 @@ A collaborative project focused on combining our ideas, experimenting with gamep
 
 <div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=Darkiyus&show_icons=true&hide_border=true&bg_color=0D1117&title_color=C20E1A&icon_color=C20E1A&text_color=E6EDF3&ring_color=C20E1A&include_all_commits=true" alt="Darkiyus GitHub statistics" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Darkiyus&layout=compact&hide_border=true&bg_color=0D1117&title_color=C20E1A&text_color=E6EDF3&langs_count=8" alt="Darkiyus most used languages" />
+<img width="49%" src="./profile-summary-card-output/github_dark/3-stats.svg" alt="Darkiyus GitHub statistics" />
+<img width="49%" src="./profile-summary-card-output/github_dark/1-repos-per-language.svg" alt="Darkiyus most used languages" />
 
 <br />
 
