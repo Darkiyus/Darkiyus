@@ -92,43 +92,6 @@ Graphics, videos, concepts and designs that give projects their own visual ident
 
 ---
 
-## 🚧 Current & Previous Projects
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-<img src="./Nightmare_Banner.gif" alt="Nightmare banner" width="100%" />
-
-### Nightmare
-
-An experimental **VRChat all-in-one client/mod**.
-
-![Status](https://img.shields.io/badge/Status-Discontinued-8B0000?style=flat-square)
-![Type](https://img.shields.io/badge/Type-VRChat_Tool-6E40C9?style=flat-square)
-
-The project was discontinued because it no longer provided a meaningful benefit. It remains part of my development journey and taught me a lot about planning, tooling and maintaining larger ideas.
-
-</td>
-<td width="50%" valign="top">
-
-<img src="./Project-ZZZombie.gif" alt="Project ZZZombie banner" width="100%" />
-
-### Project ZZZombie
-
-A game project created in **Unity** together with a friend.
-
-![Project](https://img.shields.io/badge/Project-Collaboration-C20E1A?style=flat-square)
-![Engine](https://img.shields.io/badge/Engine-Unity-181717?style=flat-square&logo=unity)
-
-A collaborative project focused on combining our ideas, experimenting with gameplay and learning through actually building something.
-
-</td>
-</tr>
-</table>
-
----
-
 ## 📊 GitHub Activity
 
 <div align="center">
